@@ -17,20 +17,20 @@ export class AppComponent {
     {
       title: 'Адрес назначения',
       sortOrder: null,
-      sortFn: null,
+      sortFn: (a: Route, b: Route) => a.address.localeCompare(b.address),
       sortDirections: ['ascend', 'descend', null],
     },
     {
       title: 'Шлюз',
       sortOrder: null,
       sortDirections: ['ascend', 'descend', null],
-      sortFn: null,
+      sortFn: (a: Route, b: Route) => a.gateway.localeCompare(b.gateway),
     },
     {
       title: 'Интерфейс',
       sortOrder: null,
       sortDirections: ['ascend', 'descend', null],
-      sortFn: null,
+      sortFn: (a: Route, b: Route) => a.interface.localeCompare(b.interface),
     }
   ];
 
