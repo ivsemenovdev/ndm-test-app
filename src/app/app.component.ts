@@ -4,6 +4,11 @@ import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { ColumnItem } from './shared/models/column-item.model';
 import { Route } from './shared/models/route.model';
 
+/**
+ * Root component of the application.
+ * Displays a table of network routes using the TableComponent.
+ * Uses ng-zorro-antd layout components for styling.
+ */
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -13,6 +18,11 @@ import { Route } from './shared/models/route.model';
 })
 export class AppComponent {
   
+  /**
+   * Configuration for table columns.
+   * Each column has a title, sort order, sort function, and available sort directions.
+   * Columns represent: Destination Address, Gateway, and Interface.
+   */
   listOfColumns: ColumnItem[] = [
     {
       title: 'Адрес назначения',
@@ -34,6 +44,15 @@ export class AppComponent {
     }
   ];
 
+  /**
+   * Sample data of network routes.
+   * Each route contains:
+   * - uuid: Unique identifier
+   * - address: Network address with subnet mask
+   * - mask: Subnet mask
+   * - gateway: Gateway address
+   * - interface: Network interface name
+   */
   listOfRoutes: Route[] = [
     {
       uuid: "1",
